@@ -160,7 +160,7 @@ const char* const string_desc_arr [] =
 {
   (const char[]) { 0x09, 0x04 },      // 0: is English language
   "libreboot.org",                    // 1: Manufacturer
-  "skel-serprog (" PICO_BOARD ")",    // 2: Product
+  "skel-serprog",    // 2: Product
   board_serial,                       // 3: Serial number filled later
   "serprog",                          // 4: CDC Interface
 };
