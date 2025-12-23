@@ -23,7 +23,7 @@
 #define CDC_ITF     0           /* USB CDC interface no */
 
 #define SPI_IF      spi0        /* Which PL022 to use   */
-#define SPI_CS_0    7		/* The default CS pin   */
+#define SPI_CS_0    9		/* The default CS pin   */
 #define SPI_MISO    20
 #define SPI_MOSI    19
 #define SPI_SCK     18

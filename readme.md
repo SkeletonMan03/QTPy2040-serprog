@@ -15,7 +15,7 @@ This takes about 33 seconds to read the 16MiB BIOS chip of a T480s.
 Pinout for the SPI lines:
 | Pin | Function |
 |-----|----------|
-|  7  | CS       |
+|  9  | CS       |
 |  20 | MISO     |
 |  19 | MOSI     |
 |  18 | SCK      |
