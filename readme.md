@@ -1,11 +1,11 @@
-# RP2040 Feather serprog (fork of pico-serprog for use on RP2040 Feather)
+# QTPy2040 serprog (fork of pico-serprog for use on QTPy2040)
 
 Slightly less terrible serprog implementation for the Raspberry Pi Pico and
 other RP2040 based boards. Based on
 [pico-serprog by stacksmashing](https://github.com/stacksmashing/pico-serprog/).
 Further improved by kukrimate [here](https://github.com/kukrimate/pico-serprog).  
 Further improved by Riku\_V [here](https://codeberg.org/Riku_V/pico-serprog/).  
-Made work on a RP2040 Feather by me (LordSkeletonMan) here.
+Made work on a QTPy2040 by me (LordSkeletonMan) here.
 
 For a guide on how to flash a chip see
 [this page](https://libreboot.org/docs/install/spi.html#raspberry-pi-pico).
@@ -20,7 +20,7 @@ Pinout for the SPI lines:
 |  3  | MOSI     |
 |  6  | SCK      |
 
-![RP2040 Feather pinout](pinout.png)
+![QTPy2040 pinout](pinout.png)
 
 ## Compiling
 
@@ -31,7 +31,7 @@ cmake ../
 make
 ```
 
-Plug in your RP2040 Feather. Mount it as you would any other USB flash drive.
+Plug in your QTPy2040. Mount it as you would any other USB flash drive.
 Copy `rp2040feather_serprog.uf2` into it. Your programmer is now ready.
 If you want to change the firmware, you need to press the button
 on the board while you plug it in.
@@ -71,7 +71,7 @@ As a lot of the code itself was heavily inspired/influenced by `stm32-vserprog`
 this code is licensed under GPLv3.
 
 pinout.png is based on
-[Adafruit Feather RP2040 pinout.pdf](https://github.com/adafruit/Adafruit-Feather-RP2040-PCB/blob/main/Adafruit%20Feather%20RP2040%20pinout.pdf)
+[Adafruit QTPy2040 pinout.pdf](https://github.com/adafruit/Adafruit-QT-Py-RP2040-PCB/blob/main/Adafruit%20QT%20Py%20RP2040%20Pinout.pdf)
 by Adafruit Industries, under the
 [Creative Commons Attribution-ShareAlike license](https://creativecommons.org/licenses/by-sa/4.0/)
 license.
