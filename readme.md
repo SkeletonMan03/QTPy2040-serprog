@@ -58,7 +58,7 @@ Write chip:
 flashprog -p serprog:dev=/dev/ttyACMx,spispeed=32M -w flash.bin
 ```
 
-Multiple chips can be connected at the same time. Pins GP5-GP8 are Chip
+Multiple chips can be connected at the same time. Pins GP9-GP12 are Chip
 Selects 0-3, respectively. The firmware defaults to using Chip Select 0.
 ```
 flashprog -p serprog:dev=/dev/ttyACMx,cs=0 -r chip0.bin
