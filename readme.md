@@ -15,10 +15,10 @@ This takes about 33 seconds to read the 16MiB BIOS chip of a T480s.
 Pinout for the SPI lines:
 | Pin | Function |
 |-----|----------|
-|  9  | CS       |
-|  20 | MISO     |
-|  19 | MOSI     |
-|  18 | SCK      |
+|  25 | CS       |
+|  4  | MISO     |
+|  3  | MOSI     |
+|  6  | SCK      |
 
 ![RP2040 Feather pinout](pinout.png)
 
@@ -58,7 +58,7 @@ Write chip:
 flashprog -p serprog:dev=/dev/ttyACMx,spispeed=32M -w flash.bin
 ```
 
-Multiple chips can be connected at the same time. Pins GP9-GP12 are Chip
+Multiple chips can be connected at the same time. Pins GP25-GP28 are Chip
 Selects 0-3, respectively. The firmware defaults to using Chip Select 0.
 ```
 flashprog -p serprog:dev=/dev/ttyACMx,cs=0 -r chip0.bin
