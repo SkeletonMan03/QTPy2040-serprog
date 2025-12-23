@@ -26,7 +26,7 @@
 #define SPI_CS_0    7		/* The default CS pin   */
 #define SPI_MISO    20
 #define SPI_MOSI    19
-#define SPI_SCK     6
+#define SPI_SCK     18
 
 uint8_t spi_enabled = 0;
 uint cs_pin = SPI_CS_0;
