@@ -322,7 +322,7 @@ int main() {
 	/* Setup USB */
 	tusb_init();
 	/* Setup PL022 SPI */
-	enable_spi(baud);
+	enable_spi();
 
 	command_loop();
 }
