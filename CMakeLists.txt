@@ -9,3 +9,5 @@ add_executable(pico_serprog)
 target_sources(pico_serprog PRIVATE main.c usb_descriptors.c)
 target_link_libraries(pico_serprog PRIVATE pico_stdlib pico_unique_id hardware_spi tinyusb_device)
 pico_add_extra_outputs(pico_serprog)
+
+set_source_files_properties(main.c usb_descriptors.c PROPERTIES COMPILE_OPTIONS "-Wall;-Werror")
