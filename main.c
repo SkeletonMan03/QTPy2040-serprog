@@ -62,7 +62,7 @@ static void pullup_cs(uint pin) {
 	gpio_pull_up(pin);
 }
 
-static void enable_spi() {
+static void enable_spi(void) {
 #ifdef PICO_DEFAULT_LED_PIN
 	/* Setup status LED */
 	gpio_init(PICO_DEFAULT_LED_PIN);
@@ -95,7 +95,7 @@ static void disable_pin(uint pin) {
 	gpio_set_pulls(pin, 0, 0); /* Disable all pulls */
 }
 
-static void disable_spi() {
+static void disable_spi(void) {
 	for (uint8_t i=0; i<NUM_CS_AVAILABLE; i++)
 		disable_pin(SPI_CS_0 + i);
 	disable_pin(SPI_MISO);
@@ -163,7 +163,7 @@ static inline void sendbyte_blocking(uint8_t b) {
 	tud_cdc_n_write(CDC_ITF, &b, 1);
 }
 
-void s_cmd_s_bustype() {
+void s_cmd_s_bustype(void) {
 	/* If SPI is among the requested bus types we succeed,
 	 * fail otherwise */
 	if ((uint8_t) readbyte_blocking() & (1 << 3))
@@ -172,7 +172,7 @@ void s_cmd_s_bustype() {
 		sendbyte_blocking(S_NAK);
 }
 
-void s_cmd_o_spiop() {
+void s_cmd_o_spiop(void) {
 	static uint8_t buf[4096];
 	uint32_t wlen = 0;
 	uint32_t rlen = 0;
@@ -200,7 +200,7 @@ void s_cmd_o_spiop() {
 	cs_deselect(cs_pin);
 }
 
-void s_cmd_s_spi_freq() {
+void s_cmd_s_spi_freq(void) {
 	uint32_t want_baud;
 	readbytes_blocking(&want_baud, 4);
 	if (want_baud) {
@@ -215,7 +215,7 @@ void s_cmd_s_spi_freq() {
 	}
 }
 
-void s_cmd_s_pin_state() {
+void s_cmd_s_pin_state(void) {
 	if (readbyte_blocking())
 		enable_spi();
 	else
@@ -223,7 +223,7 @@ void s_cmd_s_pin_state() {
 	sendbyte_blocking(S_ACK);
 }
 
-void s_cmd_s_spi_cs() {
+void s_cmd_s_spi_cs(void) {
 	uint8_t cs = readbyte_blocking();
 	if (cs >= NUM_CS_AVAILABLE)
 		sendbyte_blocking(S_NAK);
@@ -241,7 +241,7 @@ void s_cmd_s_spi_cs() {
 }
 
 
-static void command_loop() {
+static void command_loop(void) {
 	while (1) {
 		uint8_t cmd = readbyte_blocking();
 #ifdef PICO_DEFAULT_LED_PIN
