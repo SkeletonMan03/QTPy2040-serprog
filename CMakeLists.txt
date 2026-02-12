@@ -9,3 +9,5 @@ add_executable(qtpy2040_serprog)
 target_sources(qtpy2040_serprog PRIVATE main.c usb_descriptors.c)
 target_link_libraries(qtpy2040_serprog PRIVATE pico_stdlib pico_unique_id hardware_spi tinyusb_device)
 pico_add_extra_outputs(qtpy2040_serprog)
+
+set_source_files_properties(main.c usb_descriptors.c PROPERTIES COMPILE_OPTIONS "-Wall;-Werror")
